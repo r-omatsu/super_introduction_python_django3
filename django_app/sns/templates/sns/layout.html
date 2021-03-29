@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}{% endblock %}</title>
+	<link 
+			rel="stylesheet" 
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+			crossorigin="anonymous"
+	>
+</head>
+<body class="container">
+	<nav class="navbar navbar-expand navbar-light bg-light">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a href="{% url 'index' %}" class="nav-link">top</a>
+			</li>
+			<li class="nav-item">
+				<a href="{% url 'post' %}" class="nav-link">post</a>
+			</li>
+			<li class="nav-item">
+				<a href="{% url 'groups' %}" class="nav-link">group</a>
+			</li>
+		</ul>
+		<span>logined: <span class="h6">"{{ login_user }}".</span></span>
+	</nav>
+
+	<div>
+		{% block header %}
+		{% endblock %}
+	</div>
+	<div class="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<hr>
+	<div class="my-3">
+		<span class="font-weight-bold">
+			<a href="/admin/logout?next=/sns/">[ logout ]</a>
+			<span class="float-right">copyright 2021 xxxxxxx</span>
+		</span>
+	</div>
+</body>
+</html>
