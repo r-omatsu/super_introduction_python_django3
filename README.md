@@ -1,4 +1,5 @@
 # Python Django3 超入門での学習　2021/2
+書籍：Python Django3 超入門　の学習用リポジトリ
 ## 参考文献
 * Python Django3　超入門
 ## 内容/学んだこと
